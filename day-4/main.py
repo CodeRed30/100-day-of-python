@@ -32,15 +32,8 @@ player = int(
     input("What do you choose? Type 0 for Rock, 1 for Paper and 2 for Scissors?\n")
 )
 
-display_image = {0: rock, 1: paper, 2: scissors}
-
-print("You chose: \n")
-print(display_image[player])
-
+display_image = [rock, paper, scissors]
 computer = random.randint(0, 2)
-
-print("\nComuter chose: \n")
-print(display_image[computer])
 
 player_rock = ["Its a draw!", "You lose!", "You win!"]
 player_paper = ["You win!", "You draw!", "You lose!"]
@@ -48,5 +41,13 @@ player_scissors = ["You lose!", "You win!", "You draw!"]
 
 master_answers = [player_rock, player_paper, player_scissors]
 
-print(master_answers[player][computer])
+if player > 2 or player < 0:
+    print("Invalid answer, try again!")
+else:
+    print("You chose: \n")
+    print(display_image[player])
+    print("\nComuter chose: \n")
+    print(display_image[computer])
+    print(master_answers[player][computer])
+
 print("The End!")
